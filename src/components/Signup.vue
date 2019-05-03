@@ -33,6 +33,7 @@ export default {
       user_name: "",
       pass1: "",
       pass2: "",
+      address: "",
       email: "",
       rules: {
         required: val => !!val || "Required"
