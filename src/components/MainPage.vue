@@ -47,7 +47,7 @@ export default {
     };
   },
   mounted: function() {
-    this.$http.get(this.$store.getters.getBackUrl + '/courier/get_active_orders').then(response => {
+    this.$http.get(this.$store.getters.getBackUrl + '/api/courier/get_active_orders').then(response => {
       console.log(response.data);
       this.orders = response.data;
     }, response => {
@@ -57,7 +57,7 @@ export default {
   methods: {
     acceptOrder(id) {
       console.log(id);
-      this.$http.post(this.$store.getters.getBackUrl + '/courier/order/' + id + '/').then(response => {
+      this.$http.post(this.$store.getters.getBackUrl + '/api/courier/order/' + id + '/').then(response => {
         console.log('Nice');
       }, response => {
         console.log('Connection error');

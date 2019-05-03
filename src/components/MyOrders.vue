@@ -71,13 +71,13 @@ export default {
     };
   },
   mounted: function() {
-    this.$http.get(this.$store.getters.getBackUrl + '/courier/get_not_delivered').then(response => {
+    this.$http.get(this.$store.getters.getBackUrl + '/api/courier/get_not_delivered').then(response => {
       console.log(response.data);
       this.not_delivered_orders = response.data;
     }, response => {
       console.log('Connection error');
     });
-    this.$http.get(this.$store.getters.getBackUrl + '/courier/get_delivered').then(response => {
+    this.$http.get(this.$store.getters.getBackUrl + '/api/courier/get_delivered').then(response => {
       this.finished_orders = response.data;
     }, response => {
       console.log('Connection error');
@@ -85,7 +85,7 @@ export default {
   },
     delivered(id) {
     methods: {
-      this.$http.post(this.$store.getters.getBackUrl + '/courier/delivered/' + id + '/').then(response => {
+      this.$http.post(this.$store.getters.getBackUrl + '/api/courier/delivered/' + id + '/').then(response => {
         console.log('Nice');
       }, response => {
         console.log('Connection error');
