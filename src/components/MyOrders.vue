@@ -1,7 +1,6 @@
 <template>
   <div class="container">
     <h2>Active orders</h2>
-    <p>{{not_delivered_orders}}</p>
     <table class="table">
       <thead>
         <tr>
